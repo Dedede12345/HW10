@@ -3,9 +3,14 @@ import faker
 
 from math import pi
 
+
+
+
 radii = [*range(0, 20, 2)]
 
 rad_to_space = list(map(lambda x: pi * pow(x, 2), radii))
+
+
 
 
 fake = faker.Faker()
@@ -15,7 +20,12 @@ cards = [fake.credit_card_number() for _ in range(100)]
 cards.sort(key=lambda x: str(x)[-4:])
 
 
+
+
+
 word = list(input('Type in word(english one): '))
+
+old_id = id(word)
 
 def ording(lst:list) -> list:
     for i in range(len(lst)):
@@ -23,11 +33,19 @@ def ording(lst:list) -> list:
 
 ording(word)
 
+
+
+
+
 suits = ['\u2660', '\u2665', '\u2666', '\u2663']
 
 values = [ '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
 
 deck = [(x,y) for x in suits for y in values]
+
+
+
+
 
 def fix(objectt:str, instruction) -> str:
     return instruction(objectt)
@@ -46,4 +64,4 @@ def мировая(a):
     
 deck.sort(key=lambda x:x[1])
 
-deck.sort(key=lambda x:x[0])
+#deck.sort(key=lambda x:x[0])
